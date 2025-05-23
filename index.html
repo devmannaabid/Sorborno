@@ -1,0 +1,1356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sorborno</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="m-0 p-0 border-0 overflow-x-hidden">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="images/1746509584.jpg" alt="Logo" height="40">
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Main Nav -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <!-- Search (Desktop only) - Moved to the left -->
+      <form class="d-none d-lg-flex me-auto" role="search">
+        <div class="input-group rounded">
+          <span class="input-group-text bg-white border-end-0 rounded-start-pill">
+            <i class="bi bi-search"></i>
+          </span>
+          <input class="form-control border-start-0 rounded-end-pill" type="search" placeholder="কোর্স সার্চ করুন" aria-label="Search">
+        </div>
+      </form>
+
+      <!-- Center-aligned menu items -->
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
+        <li class="nav-item">
+          <a class="btn btn-outline-success me-2" href="special offer.html">স্পেশাল অফার</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">কোর্স</a>
+          <ul class="dropdown-menu">
+            <li><a href="career course.html" class="dropdown-item">ক্যারিয়ার কোর্স</a></li>
+            <li><a href="foundation course.html" class="dropdown-item">ফাউন্ডেশন কোর্স</a></li>
+            <li><a href="free course.html" class="dropdown-item">ফ্রি কোর্স</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" id="downloadDropdown"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ডাউনলোড
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
+            <li class="dropdown-item d-flex align-items-center gap-2">
+              <i class="bi bi-android2"></i> Android
+              <a href="#" class="ms-auto btn btn-sm btn-outline-primary"><i class="bi bi-download"></i></a>
+            </li>
+            <li class="dropdown-item d-flex align-items-center gap-2">
+              <i class="bi bi-apple"></i> iOS/Mac
+              <a href="#" class="ms-auto btn btn-sm btn-outline-primary"><i class="bi bi-download"></i></a>
+            </li>
+          
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right-aligned items -->
+      <div class="d-flex align-items-center">
+        <!-- Language Switcher -->
+        <select class="form-select form-select-sm me-2" style="width: auto;" aria-label="Language select">
+          <option value="en" selected> EN</option>
+          <option value="bn"> BN</option>
+        </select>
+
+        <!-- Login/Signup -->
+       <a href="#" class="btn btn-success text-light px-3 py-1 rounded" data-bs-toggle="modal" data-bs-target="#authModal">
+           লগিন/সাইনআপ
+       </a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Login/Signup Modal -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="authModalLabel">লগিন / সাইনআপ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs mb-3" id="authTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-tab-pane" type="button" role="tab" aria-controls="login-tab-pane" aria-selected="true">
+              লগিন
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup-tab-pane" type="button" role="tab" aria-controls="signup-tab-pane" aria-selected="false">
+              সাইনআপ
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tab Panes -->
+        <div class="tab-content" id="authTabContent">
+          <!-- Login Form -->
+          <div class="tab-pane fade show active" id="login-tab-pane" role="tabpanel" aria-labelledby="login-tab" tabindex="0">
+            <form>
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">ইমেইল</label>
+                <input type="email" class="form-control" id="loginEmail" placeholder="আপনার ইমেইল দিন">
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">পাসওয়ার্ড</label>
+                <input type="password" class="form-control" id="loginPassword" placeholder="আপনার পাসওয়ার্ড দিন">
+              </div>
+              <button type="submit" class="btn btn-primary w-100">লগিন</button>
+            </form>
+          </div>
+
+          <!-- Signup Form -->
+          <div class="tab-pane fade" id="signup-tab-pane" role="tabpanel" aria-labelledby="signup-tab" tabindex="0">
+            <form>
+              <div class="mb-3">
+                <label for="signupName" class="form-label">নাম</label>
+                <input type="text" class="form-control" id="signupName" placeholder="আপনার নাম লিখুন">
+              </div>
+              <div class="mb-3">
+                <label for="signupEmail" class="form-label">ইমেইল</label>
+                <input type="email" class="form-control" id="signupEmail" placeholder="আপনার ইমেইল দিন">
+              </div>
+              <div class="mb-3">
+                <label for="signupPassword" class="form-label">পাসওয়ার্ড</label>
+                <input type="password" class="form-control" id="signupPassword" placeholder="পাসওয়ার্ড দিন">
+              </div>
+              <div class="mb-3">
+                <label for="signupPasswordConfirm" class="form-label">পুনরায় পাসওয়ার্ড</label>
+                <input type="password" class="form-control" id="signupPasswordConfirm" placeholder="পুনরায় পাসওয়ার্ড দিন">
+              </div>
+              <button type="submit" class="btn btn-success w-100">সাইনআপ</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- slider page  -->
+
+<div class="container py-0">
+  <div id="carouselExample" class="carousel slide bg-white" style="height: 50vh;">
+    <div class="carousel-inner h-100">
+      <div class="carousel-item active h-100">
+        <img src="images/slider-1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+      </div>
+      <div class="carousel-item h-100">
+        <img src="images/slider-2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div> 
+
+<!-- <div class="container py-0">
+  <div id="carouselExample" class="carousel slide bg-light" style="height: 50vh;">
+    <div class="carousel-inner h-100">
+      
+      <div class="carousel-item active h-100 position-relative">
+        <img src="images/slider-1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Welcome to Our Site</h5>
+          <p>Your trusted solution for excellence.</p>
+        </div>
+      </div>
+      
+     
+      <div class="carousel-item h-100 position-relative">
+        <img src="images/slider-2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Explore Our Services</h5>
+          <p>Innovative solutions tailored for you.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>  -->
+
+
+
+<section class="py-3 mt-3 bg-white">
+  <div class="container">
+    <div class="row text-center">
+      
+      <!-- এনরোলমেন্ট -->
+      <div class="col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="card shadow-sm bg-light h-100 border-0">
+          <div class="card-body">
+            <h2 class="fw-bold text-success">৩৬৯,০৮৬</h2>
+            <p class="mb-0">সর্বমোট এনরোলমেন্ট</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- স্টুডেন্ট সংখ্যা -->
+      <div class="col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="card shadow-sm bg-light h-100 border-0">
+          <div class="card-body">
+            <h2 class="fw-bold text-success">২৬৯,৯৩৬</h2>
+            <p class="mb-0">স্টুডেন্টের সংখ্যা</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ভিডিও সংখ্যা -->
+      <div class="col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="card shadow-sm bg-light h-100 border-0">
+          <div class="card-body">
+            <h2 class="fw-bold text-success">১১,৩৩২</h2>
+            <p class="mb-0">সর্বমোট ভিডিও</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- কোর্স সংখ্যা -->
+      <div class="col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="card shadow-sm bg-light h-100 border-0">
+          <div class="card-body">
+            <h2 class="fw-bold text-success">৫৫</h2>
+            <p class="mb-0">কোর্স ও ক্যারিয়ার ট্র্যাক</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- নিজের মত শিখুন, -->
+  <section class="py-0 bg-white">
+  <div class="container fixed-height-section d-flex align-items-center h-25">
+    <div class="row align-items-center  w-100">
+      
+      <!-- Left Side Image -->
+      <div class="col-md-6 mb-4 mb-md-0 pe-md-4">
+        <img src="images/card-1.png" class="img-fluid rounded" alt="Motivational Learning Image">
+      </div>
+      
+      <!-- Right Side Content -->
+      <div class="col-md-6 text-center text-md-start ps-md-5">
+        <h1 class="fw-bold mb-2">নিজের মত শিখুন,</h1>
+        <h1 class="fw-bold mb-3">আত্মবিশ্বাস গড়ুন!</h1>
+        <p class="mb-4">
+          চাকরি কিংবা ফ্রিল্যান্সিংয়ের জন্য নিজেকে প্রস্তুত করতে বহুব্রীহির ক্যারিয়ার ট্র্যাক কোর্সগুলোই যথেষ্ট।
+        </p>
+        <a href="#" class="btn btn-success px-4 py-2 fs-5">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <div class="container py-5 ">
+    <h2 class=" mb-4 fw-bold">কী শিখতে চান?</h2>
+
+    <div class="position-relative">
+      <!-- Slider -->
+      <div class="carousel slide" id="courseCategoriesCarousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <div class="row g-3">
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Career-Skills" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/computer.webp" alt="Career Skills" class="img-fluid" width="90" height="90">
+                    </div>
+                    <h5 class="mb-0">Career Skills</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Free-Courses" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/computer.webp" alt="Free Courses" class="img-fluid" width="90" height="90">
+                    </div>
+                    <h5 class="mb-0">Free Courses</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Product-Management" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/computer.webp" alt="Product Management" class="img-fluid" width="90" height="90">
+                    </div>
+                    <h5 class="mb-0">Product Management</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Web-and-App-Development" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/computer.webp" alt="Web and App Development" class="img-fluid" width="90" height="90">
+                    </div>
+                    <h5 class="mb-0">Web and App Development</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item active">
+            <div class="row g-3">
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="#" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/computer.webp" alt="Computer Science" class="img-fluid" width="90" height="90">
+                    </div>
+                    <h5 class="mb-0">Computer Science and Programming</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Digital-Marketing" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/computer.webp" alt="Digital Marketing" class="img-fluid" width="90" height="90">
+                    </div>
+                    <h5 class="mb-0">Digital Marketing</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Data-Science-and-Analysis" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/computer.webp" alt="Data Science" class="img-fluid" width="90" height="90">
+                    </div>
+                    <h5 class="mb-0">Data Science and Analysis</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Higher-Study-and-Exam-Prep" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/computer.webp" alt="Higher Study" class="img-fluid" width="90" height="90">
+                    </div>
+                    <h5 class="mb-0">Higher Study and Exam Prep</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="carousel-item">
+            <div class="row g-3">
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Software-and-Tools" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/images.png" alt="Software and Tools" class="img-fluid" width="90" height="90">
+                    </div>
+                    <h5 class="mb-0">Software and Tools</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#courseCategoriesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#courseCategoriesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators position-static mt-3 justify-content-center">
+        <button type="button" data-bs-target="#courseCategoriesCarousel" data-bs-slide-to="0" class="mx-1"></button>
+        <button type="button" data-bs-target="#courseCategoriesCarousel" data-bs-slide-to="1" class="mx-1 active"></button>
+        <button type="button" data-bs-target="#courseCategoriesCarousel" data-bs-slide-to="2" class="mx-1"></button>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container py-1">
+    <div class="d-flex gap-5 mb-4">
+      <h2 class="mb-0 fw-bold">ক্যারিয়ার কোর্স</h2>
+      <a href="career course.html" type="button" class="btn btn-success">See more</a>
+    </div>
+
+    <div class="scroll-container d-flex overflow-auto gap-3">
+      <!-- Card 1 -->
+   <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/css.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2 g-4">
+          <h5 class="card-title">CSS tutorial</h5>
+          <p class="card-text fw-bold"> 
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1200</span>
+            <span>-</span> 
+            <span class="text-decoration-line-through text-danger">2000</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 25 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 100 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/js.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">JS tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1900 </span>
+            <span>-</span>
+            <span class="text-decoration-line-through text-danger">2500</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 20 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 40 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/angular.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Angular tutorial</h5>
+         <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1000 </span>
+            <span>-</span>
+            <span class="text-decoration-line-through text-danger">1500</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 25 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 200 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/nodejs.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">NodeJs tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1900 </span>
+            <span>-</span>
+            <span class="text-decoration-line-through text-danger">2500</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 23 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 400 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/python.webp" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Python tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 2000 </span>
+            <span>-</span>
+            <span class="text-decoration-line-through text-danger">2500</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 23 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 444 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/java.webp" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Java tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1500 </span>
+            <span>-</span>
+            <span class="text-decoration-line-through text-danger">2000</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 40 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 250 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/laravel.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Laravel tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 4000</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 28 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 90 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/react.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">React tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1900 </span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 23 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 44 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+  </div>
+
+  <!-- বহুব্রীহি-->
+   <div class="container py-5">
+    <h2 class="mb-4 fw-bold">স্বরবর্ণ থেকে আপনি কী কী সুবিধা পাবেন</h2>
+  
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card shadow-lg h-100 text-center p-3">
+          <img src="images/benefit-icon-1.84ccd2d2.svg" class="card-img-top mb-3 mt-3 mx-auto" height="70" width="70" alt="Image">
+          <div class="card-body p-0 mt-2">
+            <h5 class="card-title fw-bold">ইন্ডাস্ট্রি এক্সপার্টদের কন্টেন্ট</h5>
+            <p class="card-text fs-6 mt-4">আমাদের প্রতিটা কন্টেন্ট ইন্ডাস্ট্রির টপ এক্সপার্টদের সরাসরি সাপোর্ট, গাইডেন্স ও ফিডব্যাক দিয়ে বানানো।</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Repeat with different content and icons -->
+      <!-- Laravel tutreal
+        -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card shadow-lg h-100 text-center p-3">
+          <img src="images/benefit-icon-1.84ccd2d2.svg" class="card-img-top mb-3 mt-3 mx-auto" height="70" width="70" alt="Image">
+          <div class="card-body p-0 mt-2">
+            <h5 class="card-title fw-bold">মেন্টরদের সরাসরি সাপোর্ট</h5>
+            <p class="card-text fs-6 mt-4">কোর্স করতে গিয়ে সমস্যায় পড়লে নির্দিষ্ট সাপোর্ট আওয়ারে যোগাযোগ করলেই সমাধান পাবেন আমাদের অভিজ্ঞ মেন্টরদের কাছ থেকে।</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card shadow-lg h-100 text-center p-3">
+          <img src="images/benefit-icon-1.84ccd2d2.svg" class="card-img-top mb-3 mt-3 mx-auto" height="70" width="70" alt="Image">
+          <div class="card-body p-0 mt-2">
+            <h5 class="card-title fw-bold">প্রজেক্ট ও অ্যাসাইনমেন্ট</h5>
+            <p class="card-text fs-6  mt-4">মার্কেট স্ট্যান্ডার্ড প্র্যাকটিক্যাল প্রজেক্ট ও অ্যাসাইনমেন্ট করানো হবে, যেগুলো নিজের পোর্টফোলিওতে যুক্ত করতে পারবেন।</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 4 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card shadow-lg h-100 text-center p-3">
+          <img src="images/benefit-icon-1.84ccd2d2.svg" class="card-img-top mb-3 mt-3 mx-auto" height="70" width="70" alt="Image">
+          <div class="card-body p-0 mt-2">
+            <h5 class="card-title fw-bold">ফ্রিল্যান্সিং সাপোর্ট</h5>
+            <p class="card-text fs-6 mt-4">কোর্স শেষে ফ্রিল্যান্সিং করতে চাইলে তার বিস্তারিত গাইডলাইন আর সাপোর্ট দেয়া হবে।</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 5 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card shadow-lg h-100 text-center p-3">
+          <img src="images/benefit-icon-1.84ccd2d2.svg" class="card-img-top mb-3 mt-3 mx-auto" height="70" width="70" alt="Image">
+          <div class="card-body p-0 mt-2">
+            <h5 class="card-title fw-bold">জব ও ইন্টার্নশিপের সম্ভাবনা</h5>
+            <p class="card-text fs-6 mt-4">বেস্ট পারফর্মারদের জব ক্যান্ডিডেট প্রোফাইল সরাসরি শেয়ার করা হবে আমাদের পার্টনার প্রতিষ্ঠানগুলোর সাথে।</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 6 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card shadow-lg h-100 text-center p-3">
+          <img src="images/benefit-icon-1.84ccd2d2.svg" class="card-img-top mb-3 mt-3 mx-auto" height="70" width="70" alt="Image">
+          <div class="card-body p-0 mt-2">
+            <h5 class="card-title fw-bold">ক্যারিয়ার ও ইন্টারভিউ প্রস্তুতি</h5>
+            <p class="card-text fs-6 mt-4">আপনার সিভি, LinkedIn প্রোফাইল, GitHub প্রোফাইল আর চাকরির ইন্টারভিউর ব্যাপারে সরাসরি সাপোর্ট পাবেন আমাদের কাছে।</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 7 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card shadow-lg h-100 text-center p-3">
+          <img src="images/benefit-icon-1.84ccd2d2.svg" class="card-img-top mb-3 mt-3 mx-auto" height="70" width="70" alt="Image">
+          <div class="card-body p-0 mt-2">
+            <h5 class="card-title fw-bold">ভেরিফাইড সার্টিফিকেট</h5>
+            <p class="card-text fs-6 m-2 mt-4">কোর্স শেষে আপনার পারফরম্যান্সের উপর গ্রেডিং করা হবে। সে অনুযায়ী আপনি বহুব্রীহি থেকে সার্টিফিকেট পাবেন।</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 8 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card shadow-lg h-100 text-center p-3">
+          <img src="images/benefit-icon-1.84ccd2d2.svg" class="card-img-top mb-3 mt-3 mx-auto" height="70" width="70" alt="Image">
+          <div class="card-body p-0">
+            <h5 class="card-title fw-bold">সুবিধামতো সময়ে শেখা</h5>
+            <p class="card-text fs-6 mt-4">নিজের সুবিধামতো সময়ে ও গতিতে আমাদের কোর্সের লার্নিং ম্যাটেরিয়ালগুলো থেকে শিখতে পারবেন আপনি।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ফাউন্ডেশন কোর্স -->
+  <div class="container py-5">
+    <div class="d-flex gap-5 mb-4">
+      <h2 class="mb-0 fw-bold">ফাউন্ডেশন কোর্স</h2>
+      <a href="foundation course.html" type="button" class="btn btn-success">See more</a>
+    </div>
+  
+    <div class="scroll-container d-flex overflow-auto gap-3">
+      <!-- Card 1 -->
+   <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/html.jpg" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Html tutorial</h5>
+          <p class="card-text text-success fw-bold">Free cors</p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 21 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 42 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/css.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2 g-4">
+          <h5 class="card-title">CSS tutorial</h5>
+          <p class="card-text fw-bold"> 
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1200</span>
+            <span>-</span> 
+            <span class="text-decoration-line-through text-danger">2000</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 25 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 100 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/js.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">JS tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1900 </span>
+            <span>-</span>
+            <span class="text-decoration-line-through text-danger">2500</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 20 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 40 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/bootstrap.jpg" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Bootstrap tutorial</h5>
+          <p class="card-text text-success fw-bold">Free cors</p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 12 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 90 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/tailwind.jpg" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Tailwind tutorial</h5>
+          <p class="card-text text-success fw-bold">Free cors</p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 30 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 400 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/nodejs.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">NodeJs tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1900 </span>
+            <span>-</span>
+            <span class="text-decoration-line-through text-danger">2500</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 23 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 400 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/python.webp" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Python tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 2000 </span>
+            <span>-</span>
+            <span class="text-decoration-line-through text-danger">2500</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 23 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 444 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/php.jfif" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">PHP tutorial</h5>
+          <p class="card-text text-success fw-bold">Free cors</p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 23 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 444 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/angular.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Angular tutorial</h5>
+         <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1000 </span>
+            <span>-</span>
+            <span class="text-decoration-line-through text-danger">1500</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 25 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 200 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/java.webp" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Java tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1500 </span>
+            <span>-</span>
+            <span class="text-decoration-line-through text-danger">2000</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 40 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 250 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/laravel.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Laravel tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 4000</span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 28 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 90 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/react.png" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">React tutorial</h5>
+          <p class="card-text fw-bold">
+            <span class="text-success"><i class="bi bi-cash-coin"></i> 1900 </span>
+          </p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 23 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 44 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+  </div>
+
+  <!-- ফ্রি কোর্স -->
+  <div class="container py-5">
+    <div class="d-flex gap-5 mb-4">
+      <h2 class="mb-0 fw-bold">ফ্রি কোর্স</h2>
+      <a href="free course.html" type="button" class="btn btn-success">See more</a>
+    </div>
+
+    <div class="scroll-container d-flex overflow-auto gap-3">
+      <!-- Card 1 -->
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/html.jpg" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Html tutorial</h5>
+          <p class="card-text text-success fw-bold">Free cors</p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 21 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 42 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/bootstrap.jpg" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Bootstrap tutorial</h5>
+          <p class="card-text text-success fw-bold">Free cors</p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 12 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 90 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/tailwind.jpg" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">Tailwind tutorial</h5>
+          <p class="card-text text-success fw-bold">Free cors</p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 30 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 400 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 p-1">
+        <img src="images/php.jfif" class="card-img-top mb-3" alt="" height="200">
+        <div class="card-body py-2">
+          <h5 class="card-title">PHP tutorial</h5>
+          <p class="card-text text-success fw-bold">Free cors</p>
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold"><i class="bi bi-play-circle"></i> 23 video</span>
+            <span class="fw-bold"><i class="bi bi-person-circle"></i> 444 student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    </div>
+  </div>
+
+  <!-- রিয়েল লাইফ প্রজেক্টের -->
+  <div class="container py-5 fixed-height-section d-flex align-items-center mb-1">
+    <div class="row align-items-center w-100">
+      <!-- Left Side Image -->
+      <div class="col-md-6 mb-4 mb-md-0 pe-md-5">
+        <img src="images/card-2.png" class="img-fluid rounded" alt="Sample Image">
+      </div>
+
+      <!-- Right Side Content -->
+      <div class="col-md-6 text-center text-md-start ps-md-5">
+        <h1 class="mb-3 fw-bold">রিয়েল লাইফ প্রজেক্টের</h1>
+        <h1 class="mb-3 fw-bold">মাধ্যমে মার্কেট স্ট্যান্ডার্ড কাজ শিখুন</h1>
+        <p class="mb-4">একেবারে বেসিক থেকে অ্যাডভান্সড লেভেল পর্যন্ত সবকিছু আপনি ধাপে ধাপে শিখবেন আমাদের ক্যারিয়ার ট্র্যাকগুলোতে। এর জন্য করবেন রিয়েল লাইফ প্রজেক্ট, যা জব ও ফ্রিল্যান্সিং মার্কেটে কাজ করার কনফিডেন্স এনে দেবে আপনাকে।</p>
+        <a href="#" class="btn btn-success"><span class="fs-5">Get Startped</span></a>
+      </div>
+    </div>
+  </div>
+
+ <!-- কল বুক করুন  -->
+  <div class="container py-5">
+  <div class="row align-items-center min-vh-70 bg-success text-white rounded-3 p-4 gx-5">
+    
+    <!-- Left side: Text -->
+    <div class="col-md-6 mb-4 mb-md-0 text-center text-md-start pe-md-4">
+      <h2 class="fw-bold">ফ্রি কলে পরামর্শ নিন</h2>
+      <h2 class="fw-bold">ক্যারিয়ার কাউন্সিলরের কাছ থেকে</h2> <br>
+      <p>আপনি যেন সঠিক ক্যারিয়ার সিদ্ধান্ত নিতে পারেন, তার জন্য আমরা দিচ্ছি ফ্রি ক্যারিয়ার কাউন্সেলিং সাপোর্ট। ক্যারিয়ার নিয়ে আপনার বিভিন্ন প্রশ্নের উত্তর পাবেন অভিজ্ঞ ক্যারিয়ার কাউন্সেলরদের কাছ থেকে।</p>
+    </div>
+    
+    <!-- Right side: Form -->
+    <div class="col-md-5 mt-5 ps-md-4">
+      <div class="bg-white text-dark p-4 rounded shadow">
+         <form>
+    <div class="mb-3">
+      <label for="name" class="form-label">আপনার নাম :</label>
+      <input type="text" name="name" id="name" class="form-control" required placeholder="আপনার নাম " />
+    </div>
+  
+    <div class="mb-3">
+      <label for="phone" class="form-label">ফোন নাম্বার :</label>
+      <input type="text" name="phone" id="phone" class="form-control" required placeholder="ফোন নাম্বার " maxlength="11" />
+    </div>
+  
+    <div class="mb-3">
+      <label for="course" class="form-label">কোর্স নির্বাচন করুন :</label>
+      <select name="course" id="course" class="form-select" required>
+      <option value="digital-marketing">ডিজিটাল মার্কেটিং</option>
+      <option value="digital-product-management">ডিজিটাল প্রোডাক্ট ম্যানেজমেন্ট</option>
+      <option value="fullstack-python-js">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (Python & JavaScript)</option>
+      <option value="data-analytics">ডেটা অ্যানালিটিক্স</option>
+      <option value="fullstack-mern">ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট (MERN)</option>
+      
+      </select>
+    </div>
+  
+    <div class="mb-3">
+      <label for="date" class="form-label">আপনার পছন্দের তারিখ :</label>
+      <input type="date" name="date" id="date" class="form-control" required />
+    </div>
+  
+    <div class="mb-3">
+      <label for="time" class="form-label">সময় নির্বাচন করুন :</label>
+      <select name="time" id="time" class="form-select" required>
+        <option value="10am">10:00 AM</option>
+        <option value="2pm">2:00 PM</option>
+      </select>
+    </div>
+  
+    <button type="submit" class="btn btn-success w-100">কল বুক করুন</button>
+  </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- শিক্ষার্থীরা যা বলেছেন -->
+ <div class="container py-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0 fw-bold">শিক্ষার্থীরা যা বলেছেন</h2>
+    <div>
+      <!-- Carousel Controls -->
+      <button class="btn btn-outline-secondary me-2" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <i class="bi bi-arrow-left"></i>
+      </button>
+      <button class="btn btn-outline-secondary" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bootstrap Carousel -->
+  <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      
+      <!-- Card 1 -->
+      <div class="carousel-item active">
+        <div class="card1">
+          <div class="card-body p-4">
+            <div class="row align-items-center h-100">
+              <div class="col-md-6">
+                <p class="card-text">একেবারে বেসিক থেকে অ্যাডভান্সড লেভেল পর্যন্ত সবকিছু আপনি ধাপে ধাপে শিখবেন আমাদের ক্যারিয়ার ট্র্যাকগুলোতে। এর জন্য করবেন রিয়েল লাইফ প্রজেক্ট, যা জব ও ফ্রিল্যান্সিং মার্কেটে কাজ করার কনফিডেন্স এনে দেবে আপনাকে।</p>
+                <div class="d-flex align-items-center">
+                  <img src="images/user.png" alt="User" class="rounded-circle me-2" width="40" height="40">
+                  <div>
+                    <div class="fw-bold">John Doe</div>
+                    <div class="text-muted small">একেবারে বেসিক থেকে অ্যাডভান্সড লেভেল পর্যন্ত সবকিছু আপনি ধাপে ধাপে শিখবেন</div>
+                  </div>
+                </div>
+              </div>
+               <div class="col-md-6 position-relative">
+                <img src="images/student.jpg" alt="Testimonial Image" class="img-fluid rounded">
+                <i class="bi bi-play-circle-fill position-absolute top-50 start-50 translate-middle "
+                     style="font-size: 4rem; cursor: pointer;"
+                     data-bs-target="#exampleModalToggle"
+                     data-bs-toggle="modal">
+                </i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="carousel-item">
+        <div class="card1">
+          <div class="card-body p-4">
+            <div class="row align-items-center h-100">
+              <div class="col-md-6">
+                <p class="card-text">একেবারে বেসিক থেকে অ্যাডভান্সড লেভেল পর্যন্ত সবকিছু আপনি ধাপে ধাপে শিখবেন আমাদের ক্যারিয়ার ট্র্যাকগুলোতে। এর জন্য করবেন রিয়েল লাইফ প্রজেক্ট, যা জব ও ফ্রিল্যান্সিং মার্কেটে কাজ করার কনফিডেন্স এনে দেবে আপনাকে।</p>
+              </div>
+               <div class="col-md-6 position-relative">
+                <img src="images/student.jpg" alt="Testimonial Image" class="img-fluid rounded">
+                  <i class="bi bi-play-circle-fill position-absolute top-50 start-50 translate-middle grow"
+                     style="font-size: 4rem; cursor: pointer;"
+                     data-bs-target="#exampleModalToggle"
+                     data-bs-toggle="modal">
+                  </i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="carousel-item">
+        <div class="card1">
+          <div class="card-body p-4">
+            <div class="row align-items-center h-100">
+              <div class="col-md-6">
+                <p class="card-text">একেবারে বেসিক থেকে অ্যাডভান্সড লেভেল পর্যন্ত সবকিছু আপনি ধাপে ধাপে শিখবেন আমাদের ক্যারিয়ার ট্র্যাকগুলোতে। এর জন্য করবেন রিয়েল লাইফ প্রজেক্ট, যা জব ও ফ্রিল্যান্সিং মার্কেটে কাজ করার কনফিডেন্স এনে দেবে আপনাকে।</p>
+              </div>
+              <div class="col-md-6 position-relative">
+                <img src="images/student.jpg" alt="Testimonial Image" class="img-fluid rounded">
+                  <i class="bi bi-play-circle-fill position-absolute top-50 start-50 translate-middle grow"
+                     style="font-size: 4rem; cursor: pointer;"
+                     data-bs-target="#exampleModalToggle"
+                     data-bs-toggle="modal">
+                  </i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+ 
+<!-- video model -->
+ <div class="modal fade" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- modal-lg for wider video -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Watch Video</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body">
+          <!-- Example with YouTube iframe -->
+          <!-- <div class="ratio ratio-16x9">
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/MAqXkFKVN48?si=0h48txN6XzpQEsEw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>  -->
+          <video controls class="w-100 rounded-3">
+            <source src="video/anime.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>       
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+  <div class="container py-5">
+    <h2 class="mb-4 fw-bold">আমাদের পার্টনার</h2>
+  
+    <div class="position-relative">
+      <!-- Slider -->
+      <div class="carousel slide" id="courseCategoriesCarousel2" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <div class="row g-3">
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Career-Skills" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/images.png" alt="Career Skills" class="img-fluid" width="90" height="90">
+                    </div>
+                    <p class="mb-0">Career Skills</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Free-Courses" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/images.png" alt="Free Courses" class="img-fluid" width="90" height="90">
+                    </div>
+                    <p class="mb-0">Free Courses</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Product-Management" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/images.png" alt="Product Management" class="img-fluid" width="90" height="90">
+                    </div>
+                    <p class="mb-0">Product Management</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Web-and-App-Development" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/images.png" alt="Web and App Development" class="img-fluid" width="90" height="90">
+                    </div>
+                    <p class="mb-0">Web and App Development</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="carousel-item active">
+            <div class="row g-3">
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Computer-Science-and-Programming" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/images.png" alt="Computer Science" class="img-fluid" width="90" height="90">
+                    </div>
+                    <p class="mb-0">Computer Science and Programming</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Digital-Marketing" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/images.png" alt="Digital Marketing" class="img-fluid" width="90" height="90">
+                    </div>
+                    <p class="mb-0">Digital Marketing</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Data-Science-and-Analysis" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/images.png" alt="Data Science" class="img-fluid" width="90" height="90">
+                    </div>
+                    <p class="mb-0">Data Science and Analysis</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <a href="/courses?category_ids=Higher-Study-and-Exam-Prep" class="text-decoration-none">
+                  <div class="card h-100 text-center p-3">
+                    <div class="mx-auto mb-3">
+                      <img src="images/images.png" alt="Higher Study" class="img-fluid" width="90" height="90">
+                    </div>
+                    <p class="mb-0">Higher Study and Exam Prep</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#courseCategoriesCarousel2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#courseCategoriesCarousel2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  
+      <!-- Indicators -->
+      <div class="carousel-indicators position-static mt-3 justify-content-center">
+        <button type="button" data-bs-target="#courseCategoriesCarousel" data-bs-slide-to="0" class="mx-1"></button>
+        <button type="button" data-bs-target="#courseCategoriesCarousel" data-bs-slide-to="1" class="mx-1 active"></button>
+        <button type="button" data-bs-target="#courseCategoriesCarousel" data-bs-slide-to="2" class="mx-1"></button>
+      </div>
+    </div>
+  </div>
+
+   <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row justify-content-between align-items-start">
+
+        <!-- Company Logo Section (Left) -->
+        <div class="col-md-3 mb-4 mt-5">
+          <img src="images/1746509584.jpg" alt="Company Logo" class="img-fluid mb-3">
+          <form action="#" method="post">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+              <button type="submit" class="btn btn-success ms-2">Subscribe</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Quick Links Section (Center) -->
+        <div class="col-md-3 mb-2 d-flex flex-column align-items-md-center align-items-start mt-5">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="privacy" class="text-white text-decoration-none btn-info">Home</a></li>
+            <li><a href="compliance" class="text-white text-decoration-none">About</a></li>
+            <li><a href="partnerwith" class="text-white text-decoration-none">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Right Side: Solutions + Follow Us + Get in Touch -->
+        <div class="col-md-5 mb-4">
+          <div class="row">
+
+            <!-- Solutions -->
+            <div class="col-md-6 mb-3 mt-5">
+              <h4>কোর্স</h4>
+              <ul class="list-unstyled">
+                <li><a href="career course.html" class="text-white text-decoration-none">ক্যারিয়ার কোর্স</a></li>
+                <li><a href="foundation course.html" class="text-white text-decoration-none">ফাউন্ডেশন কোর্স</a></li>
+                <li><a href="free course.html" class="text-white text-decoration-none">ফ্রি কোর্স</a></li>
+              </ul>
+            </div>
+
+            <!-- Follow Us & Get in Touch -->
+            <div class="col-md-6 mt-5 w-50">
+              <h4>Follow Us</h4>
+              <ul class="list-unstyled d-flex mb-3">
+                <li><a href="#" class="text-info me-3 fs-4"><i class="bx bxl-facebook"></i></a></li>
+                <li><a href="#" class="text-primary me-3 fs-4"><i class="bx bxl-linkedin"></i></a></li>
+                <li><a href="#" class="text-danger me-3 fs-4"><i class='bx bxl-youtube'></i></a></li>
+                <li><a href="#" class="text-success me-3 fs-4"><i class='bx bxl-whatsapp' ></i></a></li>
+              </ul>
+              <h4>Get in Touch</h4>
+              <p class="md-6">
+                <a href="#" class="text-white text-decoration-none">
+                  <p><i class="bx bxs-envelope"></i> sorborno@gmail.com</p>
+                </a>
+              </p>
+              <p>
+                <a href="+88 09613-554600" class="text-white text-decoration-none">
+                  <p><i class="bx bxs-phone-call"></i> +88 09613-554600,</p>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary">
+
+      <!-- Footer Bottom -->
+      <div class="row">
+        <div class="col-12 mt-3">
+          <p class="mb-0">&copy; 2025 Company Name. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/auto scroll.js"></script>
+
+     <!-- jQuery (for animation) -->
+     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+     <!-- <script src="js/vv.js"></script> -->
+     <!-- <script src="js/mini.js"></script> -->
+ </body>
+ </html>

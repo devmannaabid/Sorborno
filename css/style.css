@@ -1,0 +1,207 @@
+ /* navbar css */
+
+ @media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .navbar-brand {
+    margin-right: 1.5rem;
+  }
+}
+
+/* For extra large screens */
+@media (min-width: 1400px) {
+  .navbar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+  /* Show dropdown on hover */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  /* Change dropdown menu background and hover effect */
+  .dropdown-menu {
+    background-color: #e0e9e9; /* Light gray */
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #69d6ac; /* Green */
+    color: #050505; /* Black text */
+  }
+
+  /* Change nav-link color on hover */
+  .nav-link:hover {
+    color: #15c91e !important; /* Blue */
+  }
+
+  /* Change active nav-link color */
+  .nav-link1.active {
+    color: #15c91e !important; /* Darker blue */
+  }
+
+
+
+  /* slider */
+
+  .carousel-control-prev,
+.carousel-control-next {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+.slider {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background: #f8f9fa;
+  padding: 20px 0;
+}
+
+.slide-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  width: calc(250px * 14);
+  
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes scroll {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-50%);
+  }
+}
+
+
+/* services  Custom CSS for hover effect */
+
+.service-card {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    background-color: #11b9d6; /* Change to your desired hover color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow on hover */
+  }
+
+
+
+  /* Industries We Serve css */
+
+  .industries-box {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.industries-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    padding: 20px;
+}
+
+.industries-box:hover .industries-overlay {
+    opacity: 1;
+}
+
+.card-body h4 {
+    margin-top: 10px;
+}
+
+
+ /* Zoom effect on hover */
+ .zoom-img {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .zoom-img:hover {
+    transform: scale(1.1); /* Zoom in effect */
+  }
+
+
+  /* News & Events */
+
+
+  .green-sec {
+    background-color: #0d6efd; /* Change as needed */
+  }
+
+  .testi-img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .testi-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .testi-designation {
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    border-radius: 50%;
+  }
+
+  /* The Company page css */
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+} */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fixed-height-section {
+          height: 800px;
+          overflow: hidden;
+        }
+        .fixed-height-section img {
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
